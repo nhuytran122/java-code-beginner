@@ -1,0 +1,149 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import bean.monbean;
+import bo.monbo;
+import dao.connectDB;
+
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTabbedPane;
+import javax.swing.JButton;
+import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JEditorPane;
+
+public class FrmQLMon extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	
+	monbo mbo = new monbo();
+	monbean mbe = new monbean();
+	ArrayList<monbean> ds = new ArrayList<monbean>();
+	public void ImportTable(ArrayList<monbean> list){
+		DefaultTableModel mh = new DefaultTableModel();
+		mh.addColumn("Mã Món");
+		mh.addColumn("Tên Món");
+		mh.addColumn("Giá");
+		mh.addColumn("Loại Món");
+		for(monbean mb3 : list){	
+			Object[] t=new Object[5];
+			t[0] = mb3.getMamon();
+			t[1] = mb3.getTenmon();
+			t[2] = mb3.getGia();
+			t[3] = mb3.getLoaimon();
+			mh.addRow(t);
+		}
+		table.setModel(mh);
+	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FrmQLMon frame = new FrmQLMon();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FrmQLMon() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowOpened(WindowEvent e) {
+				try {
+					connectDB.KetNoi();
+					ImportTable(mbo.getmon());
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+				
+			}
+		});
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 754, 589);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(10, 56, 720, 410);
+		contentPane.add(tabbedPane);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		tabbedPane.addTab("New tab", null, scrollPane, null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		scrollPane.setViewportView(lblNewLabel);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		tabbedPane.addTab("List món", null, scrollPane_1, null);
+		
+		table = new JTable();
+		scrollPane_1.setViewportView(table);
+		
+		JButton btnAdd = new JButton("Thêm");
+		btnAdd.setBackground(new Color(0, 255, 128));
+//		btnAdd.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				monbean mb = new monbean(txtMamon.getText(), txtTenmon.getText(), txtGia.getText(),txtLoaimon.getText());
+//				try{
+//					if (mb.getMamon().equals("")|| mb.getTenmon().equals("") || mb.getGia().equals("") || mb.getLoaimon().equals("")){
+//						JOptionPane.showMessageDialog(null, "Vui lòng nhập đủ thông tin");
+//					}
+//					else{
+//						if(mbo.themmon(mb) == 0){
+//							JOptionPane.showMessageDialog(null, "Mon nay da co trong menu!");
+//						}
+//						else{
+//								ImportTable(mbo.getmon());
+//								JOptionPane.showMessageDialog(null, "Thêm món thành công");
+//						}
+//					}
+//					
+//				}catch(Exception tt){
+//					tt.printStackTrace();
+//				}
+//			}
+//		});
+		btnAdd.setBounds(94, 477, 118, 46);
+		contentPane.add(btnAdd);
+		
+		JButton btnUpdate = new JButton("Sửa");
+		btnUpdate.setBounds(318, 477, 118, 46);
+		contentPane.add(btnUpdate);
+		
+		JButton btnDelete = new JButton("Xóa");
+		btnDelete.setBackground(new Color(255, 128, 128));
+		btnDelete.setBounds(537, 477, 118, 46);
+		contentPane.add(btnDelete);
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;hieu&apos; in &apos;bean.XeMaybean.tinhTien()&apos; to &apos;timeThue&apos;&#x0D;&#x0A;- Original project: &apos;Bai4_OOP2&apos;&#x0D;&#x0A;- Original element: &apos;bean.XeMaybean.tinhTien().hieu&apos;&#x0D;&#x0A;- Renamed element: &apos;hieu&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;hieu&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;bean{XeMaybean.java[XeMaybean~tinhTien@hieu!459!527!464!467!J!0!false" name="timeThue" references="true" stamp="1679277246073" version="1.0"/>
+</session>

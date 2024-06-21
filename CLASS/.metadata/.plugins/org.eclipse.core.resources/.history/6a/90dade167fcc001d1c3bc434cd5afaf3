@@ -1,0 +1,128 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JList;
+import java.awt.Color;
+import javax.swing.JComboBox;
+import java.awt.SystemColor;
+import javax.swing.JTextField;
+
+public class FrmBanHang extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FrmBanHang frame = new FrmBanHang();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FrmBanHang() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 785, 589);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Chọn loại");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel.setBounds(10, 45, 98, 24);
+		contentPane.add(lblNewLabel);
+		
+		JList lstloai = new JList();
+		lstloai.setBounds(10, 94, 158, 405);
+		contentPane.add(lstloai);
+		
+		JLabel lblNewLabel_1 = new JLabel("Mã sách");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1.setBackground(new Color(240, 240, 240));
+		lblNewLabel_1.setBounds(235, 52, 98, 17);
+		contentPane.add(lblNewLabel_1);
+		
+		JComboBox cmbMasach = new JComboBox();
+		cmbMasach.setBounds(308, 41, 252, 37);
+		contentPane.add(cmbMasach);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Tên sách");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1_1.setBackground(SystemColor.menu);
+		lblNewLabel_1_1.setBounds(235, 125, 98, 17);
+		contentPane.add(lblNewLabel_1_1);
+		
+		textField = new JTextField();
+		textField.setBounds(308, 117, 252, 37);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_1_2 = new JLabel("Tác giả");
+		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1_2.setBackground(SystemColor.menu);
+		lblNewLabel_1_2.setBounds(235, 194, 98, 17);
+		contentPane.add(lblNewLabel_1_2);
+		
+		JLabel lblNewLabel_1_3 = new JLabel("Giá");
+		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1_3.setBackground(SystemColor.menu);
+		lblNewLabel_1_3.setBounds(235, 262, 98, 17);
+		contentPane.add(lblNewLabel_1_3);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(308, 186, 252, 37);
+		contentPane.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(308, 254, 252, 37);
+		contentPane.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(308, 317, 252, 37);
+		contentPane.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(308, 379, 252, 37);
+		contentPane.add(textField_4);
+		
+		JLabel lblNewLabel_1_3_1 = new JLabel("Số lượng");
+		lblNewLabel_1_3_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1_3_1.setBackground(SystemColor.menu);
+		lblNewLabel_1_3_1.setBounds(235, 328, 98, 17);
+		contentPane.add(lblNewLabel_1_3_1);
+		
+		JLabel lblNewLabel_1_3_2 = new JLabel("Thành tiền");
+		lblNewLabel_1_3_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1_3_2.setBackground(SystemColor.menu);
+		lblNewLabel_1_3_2.setBounds(235, 390, 98, 17);
+		contentPane.add(lblNewLabel_1_3_2);
+	}
+}

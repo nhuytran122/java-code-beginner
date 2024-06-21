@@ -1,0 +1,5 @@
+CB01;Ngô Minh;ngminh@gmail.com;02398747;03/06/1999;2.4;minhng;ngominh
+CB02;Lê Văn Nam;lvnam@gmail;0663361721;09/08/1998;1.5;6vanam;lvannam
+CB03;Trần Văn Long;tvlong@;0685654786;03/08/1999;2.2;tvl,tvanlong
+CB04;Nguyễn Khánh;nguyenkhanh@gmail;06335;12/06/1999;3.5;ngkhanh;nguyenkhanh
+CB05;Trần Như Ý;nhuytran@gmail.com;0796547823;12/02/2003;2.5;nhuy;trannhuy23

@@ -1,0 +1,7 @@
+DD001;Iphone;Apple;10000000;1 nam
+CD001;DT ban;ABC;300000
+DD002;Samsung;Samsung;8000000;6 thang
+DD0C3;Oppo;Oppo;6000000;5 thang
+CD002;DT Co;QEW;300000;6 thang
+CD003;DT Co dien;DEF;350000
+DD004;DT A;POW;2500000;6 thang

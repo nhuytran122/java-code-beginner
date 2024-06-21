@@ -1,0 +1,4 @@
+1; sai MaCB; sai ngày sinh
+2; sai Email; sai tên đăng nhập
+3; sai Email; sai ngày sinh; sai hệ số lương
+4; sai SĐT; sai tên đăng nhập

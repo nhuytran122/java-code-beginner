@@ -1,0 +1,11 @@
+package com.nhuytran.dp;
+
+@lombok.AllArgsConstructor 
+@lombok.NoArgsConstructor
+@lombok.Getter
+@lombok.Setter
+public class SinhVien {
+	private String maSinhVien;
+	private String hoTen;
+	private double diemTrungBinh;
+}

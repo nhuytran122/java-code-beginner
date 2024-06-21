@@ -1,0 +1,5 @@
+9B01;Ngô Minh;ngminh@gmail.com;0239368747;32/06/1999;2.4;minhng;ngominh
+CB02;Lê Văn Nam;lvnam@gmail;0663361721;09/08/1998;1.5;6vanam;lvannam
+CB03;Trần Văn Long;tvlong@;0685654786;31/04/1999;a8bc;tvl;tvanlong
+CB04;Nguyễn Khánh;nguyenkhanh@gmail.com;06335;12/06/1999;3.5;8ngkhanh;nguyenkhanh
+CB05;Trần Như Ý;nhuytran@husc.edu.vn;0796547823;12/02/2003;2.5;nhuy;trannhuy23

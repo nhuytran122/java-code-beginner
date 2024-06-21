@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;dao.XeDao.Luu(...)&apos; to &apos;XuatOutput&apos;&#x0D;&#x0A;- Original project: &apos;Bai4_OOP3&apos;&#x0D;&#x0A;- Original element: &apos;dao.XeDao.Luu(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;dao.XeDao.XuatOutput(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;Luu&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;dao{XeDao.java[XeDao~Luu~QArrayList\&lt;QXebean;&gt;;" name="XuatOutput" references="true" stamp="1685535190236" version="1.0"/>
+</session>

@@ -1,0 +1,7 @@
+package com.nhuytran.dp;
+
+public class SinhVien {
+	private String maSinhVien;
+	private String hoTen;
+	private double diemTrungBinh;
+}

@@ -1,0 +1,4 @@
+SV1;Lê Văn A;7;9
+SV2;Nguyễn Văn B;6;7;8
+SV3;Trần C;8;8
+SV4;Phạm Văn D;6;8;7

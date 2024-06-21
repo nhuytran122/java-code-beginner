@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class A4_Test_Arr_KĐPM {
+	public static void main(String[] args) {
+        List<Integer> arr = new ArrayList<>();
+        arr.add(2);
+        arr.add(4);
+        arr.add(7);
+        arr.add(9);
+        arr.add(15);
+        
+        insertInSortedOrder(arr, 8);
+	}
+	
+	public static void insertInSortedOrder(List<Integer> arr, int newElement) {
+        int i = 0;
+        while (i < arr.size() && arr.get(i) < newElement) {
+            i++;
+        }
+        arr.add(i, newElement);
+    }
+}

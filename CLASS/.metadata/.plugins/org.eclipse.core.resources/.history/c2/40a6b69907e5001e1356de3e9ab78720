@@ -1,0 +1,2 @@
+MS_SQLSERVER
+jdbc:sqlserver://DESKTOP-27LQTFG:1433; databaseName=DB_Ktra_DP; user=sa; password=Tn002103@@@; encrypt=true; trustServerCertificate=true

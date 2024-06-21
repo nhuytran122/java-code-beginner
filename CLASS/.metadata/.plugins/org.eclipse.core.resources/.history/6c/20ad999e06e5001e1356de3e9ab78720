@@ -1,0 +1,52 @@
+package _21T1020080;
+
+import java.util.Date;
+
+public class SinhVien {
+	private String MSV;
+	private String HoTen;
+	private boolean GioiTinhNam;
+	private Date NgaySinh;
+	
+	public SinhVien() {
+		super();
+	}
+	
+	@Override
+	public String toString() {
+		return "SinhVien [MaSinhVien=" + MSV + ", HoTen=" + HoTen + ", GioiTinhNam=" + GioiTinhNam
+				+ ", NgaySinh=" + NgaySinh + "]";
+	}
+
+	public String getMaSinhVien() {
+		return MSV;
+	}
+	public void setMaSinhVien(String MaSinhVien) {
+		this.MSV = MaSinhVien;
+	}
+	public String getHoTen() {
+		return HoTen;
+	}
+	public void setHoTen(String hoTen) {
+		HoTen = hoTen;
+	}
+	public boolean isGioiTinhNam() {
+		return GioiTinhNam;
+	}
+	public void setGioiTinhNam(boolean gioiTinhNam) {
+		GioiTinhNam = gioiTinhNam;
+	}
+	public Date getNgaySinh() {
+		return NgaySinh;
+	}
+	public void setNgaySinh(Date ngaySinh) {
+		NgaySinh = ngaySinh;
+	}
+	public SinhVien(String maSinhVien, String hoTen, boolean gioiTinhNam, Date ngaySinh) {
+		super();
+		MSV = maSinhVien;
+		HoTen = hoTen;
+		GioiTinhNam = gioiTinhNam;
+		NgaySinh = ngaySinh;
+	}
+}

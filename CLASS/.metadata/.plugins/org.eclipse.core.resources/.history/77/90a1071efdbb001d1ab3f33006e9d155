@@ -1,0 +1,157 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import bean.DonViBean;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JTabbedPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JButton;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import bo.DonViBo;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class FrmDonVi extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtma;
+	private JTextField txtten;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	DonViBo dvbo = new DonViBo();
+	ArrayList<DonViBean> ds;
+	void NapBang(ArrayList<DonViBean> ds) {
+		DefaultTableModel mh = new DefaultTableModel();
+		mh.addColumn("Mã đơn vị");
+		mh.addColumn("Tên đơn vị");
+		for(DonViBean dv:ds) {
+			Object[] t = new Object[2];
+			t[0] = dv.getMadv();
+			t[1] = dv.getTendv();
+			mh.addRow(t);
+		}
+		table.setModel(mh);
+	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FrmDonVi frame = new FrmDonVi();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FrmDonVi() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowOpened(WindowEvent e) {
+				try {
+					ds = dvbo.getDV();
+					NapBang(ds);
+				} catch (Exception e2) {
+					// TODO: handle exception
+					e2.printStackTrace();
+				}
+			}
+		});
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 789, 579);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Mã đơn vị");
+		lblNewLabel.setBounds(40, 40, 87, 20);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Tên đơn vị");
+		lblNewLabel_1.setBounds(40, 122, 87, 29);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		contentPane.add(lblNewLabel_1);
+		
+		txtma = new JTextField();
+		txtma.setBounds(152, 28, 562, 48);
+		contentPane.add(txtma);
+		txtma.setColumns(10);
+		
+		txtten = new JTextField();
+		txtten.setBounds(152, 114, 562, 48);
+		txtten.setColumns(10);
+		contentPane.add(txtten);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(10, 281, 755, 250);
+		contentPane.add(tabbedPane);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		tabbedPane.addTab("New tab", null, scrollPane, null);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JButton btnAdd = new JButton("ADD");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					for(DonViBean dvb:ds) 
+						if(dvb.getMadv().toLowerCase().trim().equals((txtma.getText()).toLowerCase().trim()))
+							JOptionPane.showMessageDialog(null, "Mã Đơn vị này đã tồn tại");
+						else{
+							
+							NapBang(dvbo.getDV());
+							JOptionPane.showMessageDialog(null, "Đã thêm đơn vị thành công");
+						}
+				} catch (Exception e2) {
+					// TODO: handle exception
+					e2.getMessage();
+				}
+				
+//				ImportTable(mb1.getmon());
+//				ds.add(new DonViBean(txtma.getText(), txtten.getText()));
+			}
+		});
+		btnAdd.setBounds(152, 208, 113, 41);
+		contentPane.add(btnAdd);
+		
+		JButton btnDelete = new JButton("DELETE");
+		btnDelete.setBounds(302, 208, 113, 41);
+		contentPane.add(btnDelete);
+		
+		JButton btnUpdate = new JButton("UPDATE");
+		btnUpdate.setBounds(456, 208, 113, 41);
+		contentPane.add(btnUpdate);
+		
+		JButton btnSave = new JButton("SAVE");
+		btnSave.setBounds(601, 208, 113, 41);
+		contentPane.add(btnSave);
+	}
+}

@@ -1,0 +1,5 @@
+import com.nhuytran.dp.SinhVien;
+import com.nhuy.dp.CongNhan;
+public class test {
+	SinhVien
+}

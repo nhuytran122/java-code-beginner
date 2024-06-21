@@ -1,0 +1,32 @@
+package com.nhuy.dp;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CongNhanReader {
+		public static List<CongNhan> readFromFile(String filename) throws IOException {
+				List<CongNhan> lst = new ArrayList<>();
+				BufferedReader br = new BufferedReader(new FileReader("cn.txt"));
+				while (true) {
+						String line = br.readLine();
+						if (line == null)
+								break;
+						
+						String[] info = line.split(",");
+						if (info.length < 3)
+								continue;
+						
+						String hoten = info[0];
+						Date ngayBatDau = info[1];
+						
+						SinhVien x = new SinhVien(maSinhVien, hoTen, diemTrungBinh);
+						lst.add(x);
+				}
+				br.close();
+				
+				return lst;
+		}
+}

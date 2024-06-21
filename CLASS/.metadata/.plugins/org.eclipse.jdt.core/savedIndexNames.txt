@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+D:\HK3_4\HK4\00_JAVA\00_CODE\CLASS\.metadata\.plugins\org.eclipse.jdt.core
+2628612958.index
+3327552209.index
+1394058805.index

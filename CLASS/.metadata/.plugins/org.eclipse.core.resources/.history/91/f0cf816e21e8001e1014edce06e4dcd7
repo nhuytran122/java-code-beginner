@@ -1,0 +1,5 @@
+public interface NhanVienAdapter {
+    String getHoTen();
+    String getLoai();
+    String getDoUuTien();
+}

@@ -1,0 +1,3 @@
+21T1020101,Nguyễn Thị Hoa,False,2001/10/30
+21T1020102,Trần Văn Huy,True,2000/02/29
+21T1020103,Lê Văn Nam,True,2001/09/02
